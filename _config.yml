@@ -1,0 +1,26 @@
+# Site settings
+name: Braun Lab
+title: Braun Lab
+email: rosemarybraun+web@gmail.com
+description: "Computational Systems Biology @ Northwestern University"
+baseurl: ""
+url: "http://www.rosemarybraun.com"
+permalink: /:categories/:title.html
+highlighter: pygments
+
+# RSS
+rss_path: feeds/
+rss_name: rss.xml
+
+# Page Set
+pages_list:
+  About: '/about'
+  Feed: '/atom.xml'
+
+# Build settings
+markdown: redcarpet
+permalink: pretty
+
+#exclude
+exclude: ["scripts/", "build.sh", "README.md", ".DS_Store", 'assets/less/']
+

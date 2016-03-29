@@ -1,0 +1,48 @@
+---
+layout: page
+title: Research
+permalink: Research/
+menu: research
+---
+
+<h4>What we Study</h4>
+
+<p>Model organisms provide the opportunity to experimentally test the correlations between genes and disease-related processes because of the high-level of conservation and the ease of manipulation. However, most model organism research is based on a single wild-type strain background with little connection to natural variation, which is like studying a single person to make conclusions about the entire human species. <em>C. elegans</em> is isolated worldwide and has genetic variation comparable to that of humans. Therefore, <em>C. elegans</em> provides the opportunity to identify the genes that vary among individuals and the molecular mechanisms for how genetic variation causes phenotypic differences.</p>
+
+
+{% assign pages = site.pages | sort:"order"  %}
+
+
+<ul>
+{% for page in pages %}
+	{% if page.category == "research" %}
+	<li><a href="#{{ page.title }}">{{ page.title }}</a></li>
+	{% endif %}
+{% endfor %}
+</ul>
+
+
+{% for page in pages %}
+	{% if page.category == "research" %}
+	<div class="row">
+			<div class="col-md-4">
+			{% if page.image %}
+				<img src="/assets/img/research/{{ page.image }}" style= "margin-top:25px" class = "hidden-sm hidden-xs img-responsive img-thumbnail" alt = "{{ page.title }}" />
+			{% endif %}
+			</div>
+			<div class="col-md-8">
+			<a name="{{ page.title }}"></a>
+			<h3>{{ page.title }}</h3>
+			{% if page.image %}
+			<img src="/assets/img/research/{{ page.image }}" style= "margin-top:25px; margin-bottom: 25px;" class="hidden-md hidden-lg img-responsive img-thumbnail" alt = "{{ page.title }}" />
+			{% endif %}
+				{{ page.content }}
+				<hr />
+			</div>
+	</div>
+	{% endif %}
+{% endfor %}
+
+
+
+
